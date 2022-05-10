@@ -45,11 +45,11 @@
     ],
     "imageResize": true,
     "chatbutton": {},
-    "favicon": "@PROJECT_PATH@/assets/images/logo-light-topleft-website-128x66.png",
+    "favicon": "@PROJECT_PATH@/assets/images/icon-luxe-verse-128x128.png",
     "PWA": {
       "enabled": false
     },
-    "mbrsiteDomain": "3an5bwkbrp",
+    "mbrsiteDomain": "lx6qigvo9r",
     "cssOptimize": false,
     "lazyLoad": false,
     "robotsSwitcher": false,
@@ -68,9 +68,9 @@
     "index.html": {
       "settings": {
         "main": true,
-        "title": "Home",
-        "meta_descr": "",
-        "header_custom": "<script src=\"https://apps.elfsight.com/p/platform.js\" defer></script>\n<div class=\"elfsight-app-71efbf49-faab-4d06-bc3c-f1124c22f27e\"></div>\n\n<script src=\"https://apps.elfsight.com/p/platform.js\" defer></script>\n<div class=\"elfsight-app-37914d47-bce0-43f6-bb93-6f2a8a0540d7\"></div>",
+        "title": "We Believe Innovation Is Key to Growth | LUXE-VERSE",
+        "meta_descr": "Our leading decentralised cryptocurrency gaming platform is the world’s safest, fairest and most secure. - LUXE-VERSE",
+        "header_custom": "<script src=\"https://apps.elfsight.com/p/platform.js\" defer></script>\n<div class=\"elfsight-app-71efbf49-faab-4d06-bc3c-f1124c22f27e\"></div>",
         "footer_custom": "",
         "html_before": ""
       },
