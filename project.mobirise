@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "index.html",
+    "currentPage": "technology.html",
     "theme": {
       "name": "appm5",
       "title": "AppM5",
@@ -59,7 +59,7 @@
     "cookiesAlert": false,
     "gdpr": false,
     "pwa-switcher": false,
-    "uniqCompNum": 65,
+    "uniqCompNum": 68,
     "versionPublish": "5.4.1",
     "screenshot": "screenshot.png",
     "publishChangesOnly": false
@@ -1820,24 +1820,26 @@
               "align-items": "center"
             },
             ".image-wrapper": {
+              "padding": "1rem",
               "@media (max-width: 991px)": {
-                "display": "none"
+                "padding": "2rem 1rem 1rem"
               }
             },
             ".text-wrapper": {
               "display": "flex",
               "flex-direction": "column",
-              "align-items": "flex-start"
+              "align-items": "flex-start",
+              "@media (min-width: 992px)": {
+                "padding-right": "84px",
+                "& when (@reverseContent)": {
+                  "padding-left": "84px",
+                  "padding-right": "0"
+                }
+              }
             },
             ".label-text": {
               "width": "100%",
-              "padding": "9px 0",
-              "margin-bottom": "12px"
-            },
-            ".label": {
-              "padding": "9px 18px",
-              "background": "@labelColor",
-              "border-radius": "20px"
+              "color": "#0057fc"
             },
             ".mbr-section-title": {
               "margin-bottom": "12px"
@@ -1845,36 +1847,27 @@
             ".mbr-text": {
               "color": "#555555",
               "width": "100%",
-              "margin-bottom": "22px"
+              "margin-bottom": "12px"
             },
-            ".link-wrap": {
-              "margin-top": "18px",
-              "width": "100%",
-              "@media (max-width: 575px)": {
-                "display": "flex",
-                "justify-content": "center"
-              },
-              "& a": {
-                "position": "relative",
-                "padding": "0 !important",
-                "&:hover:before": {
-                  "transform": "scaleX(1)",
-                  "transform-origin": "left center"
-                },
-                "&:before": {
-                  "content": "''",
-                  "position": "absolute",
-                  "color": "currentColor",
-                  "left": "0",
-                  "top": "100%",
-                  "width": "100%",
-                  "border-top-width": "1px",
-                  "border-top-style": "solid",
-                  "transform": "scaleX(0)",
-                  "transform-origin": "right center",
-                  "transition": "transform 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86)"
-                }
-              }
+            ".item": {
+              "display": "flex",
+              "align-items": "center",
+              "margin": "12px 0"
+            },
+            ".icon-box": {
+              "background": "@iconColor",
+              "width": "30px",
+              "min-width": "30px",
+              "height": "30px",
+              "border-radius": "50%",
+              "margin-right": "1rem",
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center"
+            },
+            ".mbr-iconfont": {
+              "font-size": "15px",
+              "color": "contrast(@iconColor, darken(@iconColor, 50%), #ffffff, 60%)"
             },
             ".btn-container": {
               "width": "100%"
@@ -1889,11 +1882,12 @@
               }
             }
           },
-          "_name": "features7",
+          "_name": "features8",
           "_sourceTheme": "appm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features7\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"7\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Label\" name=\"showLabel\" checked>\n        <input type=\"color\" name=\"labelColor\" title=\"Color\" value=\"#FFDD0F\" condition=\"showLabel\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Link\" name=\"showLink\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background6.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#111111\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg\">\n                <div class=\"text-wrapper\">\n                    <p class=\"label-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showLabel\" data-app-selector=\".label-text\">\n                        <span class=\"label\"><b>STARTUP</b></span>\n                    </p>\n                    <h1 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n                       <b>Blockhash</b>\n                    </h1>\n                    <p class=\"mbr-text mbr-fonts-style \" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                        A Block Hash is basically a reference number for a block in the blockchain. A block hash is the DNA of a piece of data, and each block hash is unique, random, and unbreakable </p>\n                    <div class=\"btn-container\">\n                        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Les't talk - Send a message</a>\n                        </div>\n                    </div>\n                    <div class=\"link-wrap\" mbr-if=\"showLink\">\n                        <h4 class=\"link mbr-fonts-style align-left\" mbr-theme-style=\"display-5\" data-app-selector=\".link\">\n                            <a class=\"text-black\" href=\"#\"><b>Hotline. (22) 222-3333</b></a>\n                        </h4>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-{{imageWidth}} image-wrapper\">\n                <img class=\"w-100\" src=\"../_images/features/features1.png\" alt=\"Mobirise\">\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "t5qVxolma3",
-          "_anchor": "features7-1e",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features8\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\" checked>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Label\" name=\"showLabel\" checked>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Advantages\" name=\"showAdvantages\">\n        <input type=\"color\" name=\"iconColor\" title=\"Color\" value=\"#0057fc\" condition=\"showAdvantages\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#111111\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg\">\n                <div class=\"text-wrapper\">\n                    <p class=\"label-text mbr-fonts-style mb-2\" mbr-theme-style=\"display-7\" mbr-if=\"showLabel\" data-app-selector=\".label-text\">STARTUP</p>\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title, .mbr-section-btn\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>Blockhash</b></h2>\n                    <p class=\"mbr-text mbr-fonts-style \" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                        A Block Hash is basically a reference number for a block in the blockchain. A block hash is the DNA of a piece of data, and each block hash is unique, random, and unbreakable</p>\n                    <div class=\"item mbr-flex\" mbr-if=\"showAdvantages\">\n                        <div class=\"icon-box\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-success mobi-mbri\"></span>\n                        </div>\n                        <div class=\"text-box\">\n                            <p class=\"icon-text mbr-black mbr-fonts-style m-0\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-text\">Lorem ipsum dolor sit amet</p>\n                        </div>\n                    </div>\n                    <div class=\"item mbr-flex\" mbr-if=\"showAdvantages\">\n                        <div class=\"icon-box\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-success mobi-mbri\"></span>\n                        </div>\n                        <div class=\"text-box\">\n                            <p class=\"icon-text mbr-black mbr-fonts-style m-0\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-text\">Lorem ipsum dolor sit amet</p>\n                        </div>\n                    </div>\n                    <div class=\"btn-container\">\n                        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Get in touch</a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-{{imageWidth}} image-wrapper\">\n                <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/features1.png\" alt=\"Blockhash\">\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "features8-1t",
+          "_isUserblock": true,
+          "_cid": "t5r4evw6sg",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
@@ -1985,7 +1979,7 @@
           },
           "_name": "features8",
           "_sourceTheme": "appm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features8\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\" checked>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Label\" name=\"showLabel\" checked>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Advantages\" name=\"showAdvantages\">\n        <input type=\"color\" name=\"iconColor\" title=\"Color\" value=\"#0057fc\" condition=\"showAdvantages\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#111111\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg\">\n                <div class=\"text-wrapper\">\n                    <p class=\"label-text mbr-fonts-style mb-2\" mbr-theme-style=\"display-7\" mbr-if=\"showLabel\" data-app-selector=\".label-text\">\n                       <b> WHO WE ARE</b>\n                    </p>\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title, .mbr-section-btn\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>Smart Contract</b></h2>\n                    <p class=\"mbr-text mbr-fonts-style \" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                        A \"smart contract\" is simply a program that runs on the Ethereum blockchain. It's a collection of code (its functions) and data (its state) that resides at a specific address on the Ethereum blockchain.</p>\n                    <div class=\"item mbr-flex\" mbr-if=\"showAdvantages\">\n                        <div class=\"icon-box\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-success mobi-mbri\"></span>\n                        </div>\n                        <div class=\"text-box\">\n                            <p class=\"icon-text mbr-black mbr-fonts-style m-0\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-text\">Lorem ipsum dolor sit amet</p>\n                        </div>\n                    </div>\n                    <div class=\"item mbr-flex\" mbr-if=\"showAdvantages\">\n                        <div class=\"icon-box\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-success mobi-mbri\"></span>\n                        </div>\n                        <div class=\"text-box\">\n                            <p class=\"icon-text mbr-black mbr-fonts-style m-0\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-text\">Lorem ipsum dolor sit amet</p>\n                        </div>\n                    </div>\n                    <div class=\"btn-container\">\n                        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Get in touch</a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-{{imageWidth}} image-wrapper\">\n                <img class=\"w-100\" src=\"../_images/features/features2.png\" alt=\"Mobirise\">\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features8\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"5\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Label\" name=\"showLabel\" checked>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Advantages\" name=\"showAdvantages\">\n        <input type=\"color\" name=\"iconColor\" title=\"Color\" value=\"#0057fc\" condition=\"showAdvantages\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#111111\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg\">\n                <div class=\"text-wrapper\">\n                    <p class=\"label-text mbr-fonts-style mb-2\" mbr-theme-style=\"display-7\" mbr-if=\"showLabel\" data-app-selector=\".label-text\">\n                       <b> WHO WE ARE</b>\n                    </p>\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title, .mbr-section-btn\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>Smart Contract</b></h2>\n                    <p class=\"mbr-text mbr-fonts-style \" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                        A \"smart contract\" is simply a program that runs on the Ethereum blockchain. It's a collection of code (its functions) and data (its state) that resides at a specific address on the Ethereum blockchain.</p>\n                    <div class=\"item mbr-flex\" mbr-if=\"showAdvantages\">\n                        <div class=\"icon-box\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-success mobi-mbri\"></span>\n                        </div>\n                        <div class=\"text-box\">\n                            <p class=\"icon-text mbr-black mbr-fonts-style m-0\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-text\">Lorem ipsum dolor sit amet</p>\n                        </div>\n                    </div>\n                    <div class=\"item mbr-flex\" mbr-if=\"showAdvantages\">\n                        <div class=\"icon-box\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-success mobi-mbri\"></span>\n                        </div>\n                        <div class=\"text-box\">\n                            <p class=\"icon-text mbr-black mbr-fonts-style m-0\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-text\">Lorem ipsum dolor sit amet</p>\n                        </div>\n                    </div>\n                    <div class=\"btn-container\">\n                        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Get in touch</a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-{{imageWidth}} image-wrapper\">\n                <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/features2.png\" alt=\"Smart Contract\">\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "t5qVxTOuko",
           "_anchor": "features8-1f",
           "_protectedParams": [],
@@ -2015,24 +2009,26 @@
               "align-items": "center"
             },
             ".image-wrapper": {
+              "padding": "1rem",
               "@media (max-width: 991px)": {
-                "display": "none"
+                "padding": "2rem 1rem 1rem"
               }
             },
             ".text-wrapper": {
               "display": "flex",
               "flex-direction": "column",
-              "align-items": "flex-start"
+              "align-items": "flex-start",
+              "@media (min-width: 992px)": {
+                "padding-right": "84px",
+                "& when (@reverseContent)": {
+                  "padding-left": "84px",
+                  "padding-right": "0"
+                }
+              }
             },
             ".label-text": {
               "width": "100%",
-              "padding": "9px 0",
-              "margin-bottom": "12px"
-            },
-            ".label": {
-              "padding": "9px 18px",
-              "background": "@labelColor",
-              "border-radius": "20px"
+              "color": "#0057fc"
             },
             ".mbr-section-title": {
               "margin-bottom": "12px"
@@ -2040,36 +2036,27 @@
             ".mbr-text": {
               "color": "#555555",
               "width": "100%",
-              "margin-bottom": "22px"
+              "margin-bottom": "12px"
             },
-            ".link-wrap": {
-              "margin-top": "18px",
-              "width": "100%",
-              "@media (max-width: 575px)": {
-                "display": "flex",
-                "justify-content": "center"
-              },
-              "& a": {
-                "position": "relative",
-                "padding": "0 !important",
-                "&:hover:before": {
-                  "transform": "scaleX(1)",
-                  "transform-origin": "left center"
-                },
-                "&:before": {
-                  "content": "''",
-                  "position": "absolute",
-                  "color": "currentColor",
-                  "left": "0",
-                  "top": "100%",
-                  "width": "100%",
-                  "border-top-width": "1px",
-                  "border-top-style": "solid",
-                  "transform": "scaleX(0)",
-                  "transform-origin": "right center",
-                  "transition": "transform 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86)"
-                }
-              }
+            ".item": {
+              "display": "flex",
+              "align-items": "center",
+              "margin": "12px 0"
+            },
+            ".icon-box": {
+              "background": "@iconColor",
+              "width": "30px",
+              "min-width": "30px",
+              "height": "30px",
+              "border-radius": "50%",
+              "margin-right": "1rem",
+              "display": "flex",
+              "justify-content": "center",
+              "align-items": "center"
+            },
+            ".mbr-iconfont": {
+              "font-size": "15px",
+              "color": "contrast(@iconColor, darken(@iconColor, 50%), #ffffff, 60%)"
             },
             ".btn-container": {
               "width": "100%"
@@ -2084,11 +2071,12 @@
               }
             }
           },
-          "_name": "features7",
+          "_name": "features8",
           "_sourceTheme": "appm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features7\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"7\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Label\" name=\"showLabel\" checked>\n        <input type=\"color\" name=\"labelColor\" title=\"Color\" value=\"#FFDD0F\" condition=\"showLabel\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Link\" name=\"showLink\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"../_images/background6.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#111111\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg\">\n                <div class=\"text-wrapper\">\n                    <p class=\"label-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showLabel\" data-app-selector=\".label-text\">\n                        <span class=\"label\"><b>STARTUP</b></span>\n                    </p>\n                    <h1 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">\n                       <b>Dapp</b>\n                    </h1>\n                    <p class=\"mbr-text mbr-fonts-style \" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                        Decentralized applications (dApps) are digital applications or programs that exist and run on a blockchain or peer-to-peer (P2P) network of computers instead of a single computer. DApps (also called \"dapps\") are outside the purview and control of a single authority.</p>\n                    <div class=\"btn-container\">\n                        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Les't talk - Send a message</a>\n                        </div>\n                    </div>\n                    <div class=\"link-wrap\" mbr-if=\"showLink\">\n                        <h4 class=\"link mbr-fonts-style align-left\" mbr-theme-style=\"display-5\" data-app-selector=\".link\">\n                            <a class=\"text-black\" href=\"#\"><b>Hotline. (22) 222-3333</b></a>\n                        </h4>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-{{imageWidth}} image-wrapper\">\n                <img class=\"w-100\" src=\"../_images/features/features1.png\" alt=\"Mobirise\">\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "t5qVAyz2ZE",
-          "_anchor": "features7-1g",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features8\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\" checked>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Label\" name=\"showLabel\" checked>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Advantages\" name=\"showAdvantages\">\n        <input type=\"color\" name=\"iconColor\" title=\"Color\" value=\"#0057fc\" condition=\"showAdvantages\">\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/background3.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#111111\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg\">\n                <div class=\"text-wrapper\">\n                    <p class=\"label-text mbr-fonts-style mb-2\" mbr-theme-style=\"display-7\" mbr-if=\"showLabel\" data-app-selector=\".label-text\">STARTUP</p>\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title, .mbr-section-btn\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>Dapp</b></h2>\n                    <p class=\"mbr-text mbr-fonts-style \" mbr-theme-style=\"display-4\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n                        Decentralized applications (dApps) are digital applications or programs that exist and run on a blockchain or peer-to-peer (P2P) network of computers instead of a single computer. DApps (also called \"dapps\") are outside the purview and control of a single authority.</p>\n                    <div class=\"item mbr-flex\" mbr-if=\"showAdvantages\">\n                        <div class=\"icon-box\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-success mobi-mbri\"></span>\n                        </div>\n                        <div class=\"text-box\">\n                            <p class=\"icon-text mbr-black mbr-fonts-style m-0\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-text\">Lorem ipsum dolor sit amet</p>\n                        </div>\n                    </div>\n                    <div class=\"item mbr-flex\" mbr-if=\"showAdvantages\">\n                        <div class=\"icon-box\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-success mobi-mbri\"></span>\n                        </div>\n                        <div class=\"text-box\">\n                            <p class=\"icon-text mbr-black mbr-fonts-style m-0\" mbr-theme-style=\"display-7\" data-app-selector=\".icon-text\">Lorem ipsum dolor sit amet</p>\n                        </div>\n                    </div>\n                    <div class=\"btn-container\">\n                        <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Get in touch</a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-{{imageWidth}} image-wrapper\">\n                <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/features4.png\" alt=\"Dapp\">\n            </div>\n        </div>\n    </div>\n</section>",
+          "_anchor": "features8-1u",
+          "_isUserblock": true,
+          "_cid": "t5r4fbdc98",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
