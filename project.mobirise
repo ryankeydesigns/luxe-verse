@@ -70,7 +70,7 @@
         "main": true,
         "title": "Home",
         "meta_descr": "",
-        "header_custom": "<script src=\"https://apps.elfsight.com/p/platform.js\" defer></script>\n<div class=\"elfsight-app-71efbf49-faab-4d06-bc3c-f1124c22f27e\"></div>",
+        "header_custom": "<script src=\"https://apps.elfsight.com/p/platform.js\" defer></script>\n<div class=\"elfsight-app-71efbf49-faab-4d06-bc3c-f1124c22f27e\"></div>\n\n<script src=\"https://apps.elfsight.com/p/platform.js\" defer></script>\n<div class=\"elfsight-app-71efbf49-faab-4d06-bc3c-f1124c22f27e\"></div>",
         "footer_custom": "",
         "html_before": ""
       },
